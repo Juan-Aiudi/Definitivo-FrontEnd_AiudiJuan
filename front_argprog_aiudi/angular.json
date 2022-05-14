@@ -27,9 +27,12 @@
               "src/assets"
             ],
             "styles": [
+              "front_argprog_aiudi/node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "front_argprog_aiudi/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {

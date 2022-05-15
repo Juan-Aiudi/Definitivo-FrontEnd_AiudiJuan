@@ -1,0 +1,13 @@
+div{
+    background: rgb(226, 190, 190);
+}
+
+footer{
+    color: blue;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 10px -10px 30px rgb(226, 190, 190);
+    margin-top: 5px;
+}

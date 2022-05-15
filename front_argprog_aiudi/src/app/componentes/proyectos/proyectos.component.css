@@ -1,0 +1,22 @@
+div{
+    background: rgb(226, 190, 190);
+}
+
+.row{
+    padding: 20px;
+}
+
+.clase-contenedora{
+    width: auto;
+}
+
+.texto, .imagen{
+    display: inline-block;
+    text-align: justify;
+}
+
+.img-cambios{
+    box-shadow: 10px 10px 30px blue;
+    border-radius: 10%;    
+}
+

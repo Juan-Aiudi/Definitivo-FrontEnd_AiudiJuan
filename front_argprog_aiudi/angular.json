@@ -27,11 +27,11 @@
               "src/assets"
             ],
             "styles": [
-              "front_argprog_aiudi/node_modules/bootstrap/dist/css/bootstrap.css",
+              "C:/Users/Usuario/Documents/Juan/ArgProg/ProyectoFinal/FrontEnd/FrontEnd_AiudiJuan/front_argprog_aiudi/node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": [
-              "front_argprog_aiudi/node_modules/bootstrap/dist/js/bootstrap.js"
+              "C:/Users/Usuario/Documents/Juan/ArgProg/ProyectoFinal/FrontEnd/FrontEnd_AiudiJuan/front_argprog_aiudi/node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {

@@ -1,0 +1,16 @@
+div{
+    background: rgb(226, 190, 190);
+}
+
+.row{
+    padding: 20px;
+}
+
+h3, h5{
+    display: inline;
+}
+
+p::first-letter{   /* Aquí aplico un pseudo-elemento donde a la Primera letra le cambio el color y  el tamaño*/
+    color: rgb(17, 14, 233);
+    font-size: 25px;
+}

@@ -1,5 +1,5 @@
 div{
-    background: rgb(226, 190, 190);
+    background: rgb(223, 142, 142);
 }
 
 footer{
@@ -8,6 +8,9 @@ footer{
     display: flex;
     flex-direction: column;
     text-align: center;
-    box-shadow: 10px -10px 30px rgb(226, 190, 190);
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+p{
+    font-weight: bold;
 }

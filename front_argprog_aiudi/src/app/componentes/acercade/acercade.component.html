@@ -1,15 +1,32 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" id="fotoyboton">
         <img src="../../../assets/Juan_Jpg.jpg" class="img-fluid"><!--La imagen es responsive con ing-fluid-->
+        <div>
+            <button type="button" class="btn btn-success" id="botonfoto"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editarfoto"></button>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
         <p id="nombre">Juan Carlos Aiudi</p>
-        <p>Full Stack Developer Jr</p>
+        <p id="titulo">Full Stack Developer Jr</p>
+        <div>
+            <button type="button" class="btn btn-success" id="botonnombreytitulo"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editarnombreytitulo"></button>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
         <span>
-            <h2>Acerca de</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dignissimos illo sunt ad veritatis? Fuga tempora dolorem dolores quos omnis voluptatem amet consequuntur labore vitae placeat, delectus deserunt, unde dolor?</p>
+            <div class="contenedortituloyboton">
+                <div class="titulo">
+                    <h2>Acerca de</h2>
+                </div>
+                <div class="boton">
+                    <button type="button" class="btn btn-danger"><img src="../../../assets/SimboloBorrar.png" alt="" class="simbolo" id="eliminar"></button>
+
+                    <button type="button" class="btn btn-success"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editar"></button>
+                </div>
+            </div>
+            <p id="comentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dignissimos illo sunt ad veritatis? Fuga tempora dolorem dolores quos omnis voluptatem amet consequuntur labore vitae placeat, delectus deserunt, unde dolor?</p>
         </span>
+        
     </div>
+    
 </div>

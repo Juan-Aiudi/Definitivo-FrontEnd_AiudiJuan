@@ -6,6 +6,10 @@ div{
     padding: 20px;
 }
 
+h2{
+    text-align: center;
+}
+
 h3, h5{
     display: inline;
 }
@@ -13,4 +17,44 @@ h3, h5{
 p::first-letter{   /* Aquí aplico un pseudo-elemento donde a la Primera letra le cambio el color y  el tamaño*/
     color: rgb(17, 14, 233);
     font-size: 25px;
+}
+
+.contenedorimagen, h2{
+    text-align: center;
+}
+
+.imagen{
+    height: 60px; /* Alto */
+    width: 80px; /* Ancho */
+    border-radius: 10%;
+    border: 1px solid blue;
+}
+
+.contenedortituloyboton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.simbolo{
+    height: 30px;
+    width: 30px;
+    margin-top: -25px;
+    margin-left: -15px;
+    border-radius: 50%;    
+}
+
+#eliminar{
+    border: 1px solid red;
+}
+
+#editar{
+    border: 1px solid green;
+}
+
+button{
+    margin-left: 10px;
+    align-items: center;
+    height: 10px;
+    width: 10px;
 }

@@ -1,12 +1,89 @@
-div{
-    background: rgb(226, 190, 190);
-    height: 100px;
+.row{
+    height: 150px;
 }
 
-img{
+.contenedorlogoyredes{    
+    background: rgb(223, 142, 142);    
+}
+
+.contenedorbanner{
+    background: rgb(226, 190, 190);
+    height: 100px;
+    display: contents;    
+}
+
+.imagen{
+    height: 100%;    
+}
+
+
+.contenedorlogoyredes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p{
     margin-top: 20px;
-    height: 60px;
-    width: 60px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.muestralogoargprog{
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#logo{
+    height: 40px;
+    width: 40px;
     border-radius: 20%;
-    padding: 5px;
+}
+
+#facebook, #instagram, #twitter{
+    height: 30px;
+    width: 30px;
+    border-radius: 20%;
+}
+
+a{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+button{
+    height: 30px;
+    width: 60px;
+    font-size: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media (min-width: 451px){
+    .divoculto{
+    color: rgb(226, 190, 190);
+    }
+}
+
+@media (max-width: 450px){
+    .contenedorlogoyredes{
+        flex-direction: column;
+        /*margin-bottom: 25px;*/        
+    }
+
+    .divoculto{
+        color: rgb(223, 142, 142);
+        background: rgb(223, 142, 142);
+        width: 100%;
+    }
+    .accesosaredes{
+        display: flex;
+        /*flex-direction: column;*/
+        align-items: center;
+    }
+    .muestralogoargprog{
+        margin: 0.2em;
+    }
 }

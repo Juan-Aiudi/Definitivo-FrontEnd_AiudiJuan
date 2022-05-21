@@ -16,6 +16,7 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 public class Educacion {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEducacion;
@@ -36,8 +37,8 @@ public class Educacion {
     @Size(min = 1, max = 3000, message = "no cumple con la longitud deseada entre 1 y 3000 caracteres")
     private String descripcionEducacion;
     
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idAcercaDe")
+    @JsonIgnore //Al generar el Json no genera esta parte para que no ocupe mucho lugar
+    @ManyToOne(fetch = FetchType.LAZY) //Con lazy solo se llama a los datos de PersonaAcercaDe cuando sea necesario
+    @JoinColumn(name = "idAcercaDe") //Clave foranea con el campo idAcercaDe que es el que está en la tabla
     private PersonaAcercaDe personaAcercaDe;
 }

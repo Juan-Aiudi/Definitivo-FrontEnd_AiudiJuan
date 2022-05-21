@@ -32,8 +32,8 @@ public class HabilidadesBlandas {
     @Size(min = 1, max = 15, message = "no cumple con la longitud deseada entre 1 y 15 caracteres")
     private String sizeSubTituloBlandas;
     
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idAcercaDe")
+    @JsonIgnore //Al generar el Json no genera esta parte para que no ocupe mucho lugar
+    @ManyToOne(fetch = FetchType.LAZY) //Con lazy solo se llama a los datos de PersonaAcercaDe cuando sea necesario
+    @JoinColumn(name = "idAcercaDe") //Clave foranea con el campo idAcercaDe que es el que está en la tabla
     private PersonaAcercaDe personaAcercaDe;
 }

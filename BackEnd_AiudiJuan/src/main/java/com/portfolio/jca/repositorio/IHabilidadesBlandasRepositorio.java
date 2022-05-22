@@ -1,11 +1,11 @@
 package com.portfolio.jca.repositorio;
 
-import com.portfolio.jca.entidad.Proyectos;
+import com.portfolio.jca.entidad.HabilidadesBlandas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IProyectos extends JpaRepository<Proyectos, Long> {
+public interface IHabilidadesBlandasRepositorio extends JpaRepository<HabilidadesBlandas, Long>{
     //Para ver los métodos de JpaRepository mantengo presionado CTRL y hago un CLICK en JpaRepository
-
+    
 }

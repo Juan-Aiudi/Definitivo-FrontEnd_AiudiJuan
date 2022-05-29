@@ -43,14 +43,17 @@ public class HyFController {
     }
     
     //Si quiero modificar utilizo PutMapping por la variable ID 
-    @PutMapping("/hyf/modificar/{id}")//Quedaría asi: URL:PUERTO/hyf/modificar/id/param&param&param&param&param&param
+    @PutMapping("/hyf/modificar/{id}")//Quedaría asi: URL:PUERTO/hyf/modificar/id/param&param&param&param&param&param&param&param&param
     public HeaderyFooter modificarHyF(@PathVariable Long id,
                                       @RequestParam("imagenHeaderFooter") String nvoImagen,
                                       @RequestParam("nombreHeaderFooter") String nvoNombre,
                                       @RequestParam("fechaHeaderFooter") String nvoFecha,
                                       @RequestParam("ciudadHeaderFooter") String nvoCiudad,
                                       @RequestParam("provinciaHeaderFooter") String nvoProvincia,
-                                      @RequestParam("paisHeaderFooter") String nvoPais){
+                                      @RequestParam("paisHeaderFooter") String nvoPais,
+                                      @RequestParam("imagenBotonEditar") String nvoEditar,
+                                      @RequestParam("imagenBotonCerrar") String nvoCerrar,
+                                      @RequestParam("imagenBotonEliminar") String nvoEliminar){
         HeaderyFooter hyf = ihyfservicio.finHeaderyFooter(id);
         
         hyf.setImagenHeaderFooter(nvoImagen);
@@ -59,6 +62,9 @@ public class HyFController {
         hyf.setCiudadHeaderFooter(nvoCiudad);
         hyf.setProvinciaHeaderFooter(nvoProvincia);
         hyf.setPaisHeaderFooter(nvoPais);
+        hyf.setImagenBotonEditar(nvoEditar);
+        hyf.setImagenBotonCerrar(nvoCerrar);
+        hyf.setImagenBotonEliminar(nvoEliminar);
                 
         ihyfservicio.saveHeaderyFooter(hyf);
         

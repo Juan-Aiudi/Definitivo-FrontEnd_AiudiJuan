@@ -11,28 +11,23 @@
     </div>
     
     <h2></h2>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 contenedorimagen">
-        <img src="../../../assets/logoArgProg.png" class="imagen">
-    </div>
-    <div class="col-lg-10">
-        <ul>
-            <li>
-                <h3>Estudio 1</h3> - <h5>(años)</h5>
-            </li>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius eos, possimus ab omnis ea praesentium officiis, ut, odit animi consequuntur sed reiciendis! Recusandae voluptatum obcaecati doloremque culpa, voluptatibus et accusamus?</p>
-        </ul>
+
+
+    <div *ngFor="let item of educacion" class="row">   
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 contenedorimagen">
+            <img src="{{item.imagenEducacion}}" class="imagen">                 
+        </div>
+
+        <div class="col-lg-10">
+            <ul>
+                <li>
+                    <h3>{{item.tituloObtenidoEducacion}}</h3> - <h5>{{item.tiempoDemandadoEducacion}}</h5>
+                </li>
+                <p>{{item.descripcionEducacion}}</p>
+            </ul>
+        </div>
+               
     </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 contenedorimagen">
-        <img src="../../../assets/icop.png" class="imagen">
-    </div>
-    <div class="col-lg-10">
-        <ul>
-            <li>
-                <h3>Estudio 2</h3> - <h5>(años)</h5>
-            </li>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius eos, possimus ab omnis ea praesentium officiis, ut, odit animi consequuntur sed reiciendis! Recusandae voluptatum obcaecati doloremque culpa, voluptatibus et accusamus?</p>
-        </ul>
-    </div>
-    
-</div>
+</div>    
+

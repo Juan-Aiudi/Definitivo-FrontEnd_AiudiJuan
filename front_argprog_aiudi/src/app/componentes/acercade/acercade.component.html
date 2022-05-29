@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" id="fotoyboton">
-        <img src="../../../assets/Juan_Jpg.jpg" class="img-fluid"><!--La imagen es responsive con ing-fluid-->
+        <img src="https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/283597830_5328650460537798_9018161232873118046_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeHDTZ0NhsUt3B7rG3zUknaXSxG952UJjPlLEb3nZQmM-dNaOxv2zCCxH3O9SlDGodier6N7Z8VjJiaK5mZ4CGHN&_nc_ohc=WrPhjj4bDDMAX8SN0Yw&tn=2eas0TqKdVg44Qyv&_nc_ht=scontent.fcor2-2.fna&oh=00_AT9LnfJvzgeNJdXtO-JIb9lHa28mjhRRlOWP4lgnZVuc4Q&oe=6296AFEA" class="img-fluid"><!--La imagen es responsive con ing-fluid-->
         <div>
             <button type="button" class="btn btn-success" id="botonfoto"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editarfoto"></button>
         </div>
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <p id="nombre">Juan Carlos Aiudi</p>
-        <p id="titulo">Full Stack Developer Jr</p>
+        <p id="nombre">{{personaAcDe.nombreAcercaDe}} {{personaAcDe.apellidoAcercaDe}}</p>
+        <p id="titulo">{{personaAcDe.tituloAcercaDe}}</p>
         <div>
             <button type="button" class="btn btn-success" id="botonnombreytitulo"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editarnombreytitulo"></button>
         </div>
@@ -24,7 +24,7 @@
                     <button type="button" class="btn btn-success"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editar"></button>
                 </div>
             </div>
-            <p id="comentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dignissimos illo sunt ad veritatis? Fuga tempora dolorem dolores quos omnis voluptatem amet consequuntur labore vitae placeat, delectus deserunt, unde dolor?</p>
+            <p id="comentario">{{personaAcDe.descripcionAcercaDe}}</p>
         </span>
         
     </div>

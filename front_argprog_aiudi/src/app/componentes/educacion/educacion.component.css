@@ -14,6 +14,8 @@ h3, h5{
     display: inline;
 }
 
+
+
 p::first-letter{   /* Aquí aplico un pseudo-elemento donde a la Primera letra le cambio el color y  el tamaño*/
     color: rgb(17, 14, 233);
     font-size: 25px;
@@ -28,6 +30,7 @@ p::first-letter{   /* Aquí aplico un pseudo-elemento donde a la Primera letra l
     width: 80px; /* Ancho */
     border-radius: 10%;
     border: 1px solid blue;
+    display: inline;
 }
 
 .contenedortituloyboton{

@@ -4,6 +4,7 @@ import com.portfolio.jca.entidad.PersonaAcercaDe;
 import com.portfolio.jca.interfaz.IPersonaAcercaDeServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController //Indicamos que es un controlador
+@CrossOrigin(origins = "http://localhost:4200")//Le digo que acepte que sea llamado de la URL 4200
 public class PersonaAcDeController {
     @Autowired IPersonaAcercaDeServicio iadservicio;
     
@@ -43,7 +45,7 @@ public class PersonaAcDeController {
     }
     
     //Si quiero modificar utilizo PutMapping por la variable ID 
-    @PutMapping("/ad/modificar/{id}")//Quedaría asi: URL:PUERTO/ad/modificar/id/param&param&param&param&param
+    @PutMapping("/ad/modificar/{id}")//Quedaría asi: URL:PUERTO/ad/modificar/id?param&param&param&param&param
     public PersonaAcercaDe modificarAcDe(@PathVariable Long id,
                                          @RequestParam("nombreAcercaDe") String nvoNombre,
                                          @RequestParam("apellidoAcercaDe") String nvoApellido,
@@ -61,6 +63,11 @@ public class PersonaAcDeController {
         iadservicio.savePersonaAcercaDe(acde);
         
         return acde;
+    }
+    
+    @GetMapping("/ad/traer/persona")
+    public PersonaAcercaDe finAcercaDe(){
+        return iadservicio.finPersonaAcercaDe((long)1);
     }
     
 }

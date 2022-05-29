@@ -12,6 +12,7 @@ import { HandsskillsComponent } from './componentes/handsskills/handsskills.comp
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HttpClientModule } from '@angular/common/http'//Agregamos este servicio para conectarnos con el back
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule //Agregamos este servicio para conectarnos con el back
   ],
   providers: [],
   bootstrap: [AppComponent]

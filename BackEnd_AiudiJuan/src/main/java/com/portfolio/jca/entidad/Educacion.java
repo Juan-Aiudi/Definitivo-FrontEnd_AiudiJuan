@@ -30,7 +30,7 @@ public class Educacion {
     private String tiempoDemandadoEducacion;
     
     @NotNull
-    @Size(min = 1, max = 300, message = "no cumple con la longitud deseada entre 1 y 300 caracteres")
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud deseada entre 1 y 1000 caracteres")
     private String imagenEducacion;
     
     @NotNull

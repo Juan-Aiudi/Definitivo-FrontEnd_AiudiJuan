@@ -22,7 +22,7 @@ public class HeaderyFooter {
     private Long idHeaderFooter;
     
     @NotNull
-    @Size(min = 1, max = 300, message = "no cumple con la longitud deseada entre 1 y 300 caracteres")
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud deseada entre 1 y 1000 caracteres")
     private String imagenHeaderFooter;
     
     @NotNull
@@ -46,16 +46,20 @@ public class HeaderyFooter {
     private String paisHeaderFooter;
     
     @NotNull
-    @Size(min = 1, max = 300, message = "no cumple con la longitud deseada entre 1 y 300 caracteres")
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud deseada entre 1 y 1000 caracteres")
     private String imagenBotonEditar;
     
     @NotNull
-    @Size(min = 1, max = 300, message = "no cumple con la longitud deseada entre 1 y 300 caracteres")
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud deseada entre 1 y 1000 caracteres")
     private String imagenBotonCerrar;
     
     @NotNull
-    @Size(min = 1, max = 300, message = "no cumple con la longitud deseada entre 1 y 300 caracteres")
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud deseada entre 1 y 1000 caracteres")
     private String imagenBotonEliminar;
+    
+    @NotNull
+    @Size(min = 1, max = 1000, message = "no cumple con la longitud deseada entre 1 y 1000 caracteres")
+    private String imagenBanner;
     
     @JsonIgnore //Al generar el Json no genera esta parte para que no ocupe mucho lugar
     @OneToOne(fetch = FetchType.LAZY) //Con lazy solo se llama a los datos de PersonaAcercaDe cuando sea necesario

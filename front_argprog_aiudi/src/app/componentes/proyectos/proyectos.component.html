@@ -1,19 +1,17 @@
 <div class="row">
     <h2>Proyectos Realizados</h2>
     <h2></h2>
-    <div class="clase-contenedora">
-        <div class="col-sm-12 col-md-7 col-lg-7 texto">
-            <h3>Proyecto Argentina Programa #YoProgramo</h3>
-            <p>Desarrollo de una aplicación web full stack, que muestra: los datos personales,  estudios cursados, experiencia laboral y conocimiento de las
-                tecnología. Es decir, ¡crear mi propio portfolio web! Esta aplicación es de arquitectura distribuida y contiene un
-                diseño de interfaz de usuario (front end) que muestra la información, una base de datos que almacene los datos antes mencionados y cuenta
-                con las APIs necesarias para proveer a través de internet la información (back end). La idea, además de servir para aplicar lo aprendido
-                , es que pueda publicar el portfolio web y usarlo como carta de presentación en el mercado laboral.</p>
+    <div *ngFor="let item of proyecto" class="row">
+        <div class="clase-contenedora">
+            <div class="col-sm-12 col-md-7 col-lg-7 texto">
+                <h3>{{item.nombreDelProyecto}}</h3>
+                <p>{{item.descripcionProyecto}}</p>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 imagen">
+                <img src="{{item.imagenProyecto}}" class="img-fluid img-cambios">
+            </div>
         </div>
-        <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 imagen">
-            <img src="../../../assets/background_Login.jpg" class="img-fluid img-cambios">
-        </div>
+        <h2></h2>
+        <h2></h2>
     </div>
-    <h2></h2>
-    <h2></h2>
 </div>

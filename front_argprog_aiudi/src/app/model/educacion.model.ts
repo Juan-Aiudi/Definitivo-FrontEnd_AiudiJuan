@@ -1,4 +1,4 @@
-export class educacion{
+export class educacionModel{
     idEducacion?: number; //Con el símbolo ? le digo que este dato NO es necesario
     tituloObtenidoEducacion: String;
     tiempoDemandadoEducacion: String;
@@ -15,5 +15,3 @@ export class educacion{
 
 //Ahora lo que tenemos que hacer es crear un SERVICIO que utilice este modelo
 //Abrimos un terminal ng g s service/educacion
-
-//Este modelo de educación lo generé pero NO lo utilizo en ninguna parte. Lo puedo eliminar

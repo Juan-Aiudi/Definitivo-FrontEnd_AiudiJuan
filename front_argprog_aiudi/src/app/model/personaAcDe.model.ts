@@ -1,12 +1,13 @@
 export class personaAcDe{
-    idAcercaDe?: number; //Con el símbolo ? le digo que este dato NO es necesario
+    idAcercaDe?: String; //Con el símbolo ? le digo que este dato NO es necesario
     nombreAcercaDe: String;
     apellidoAcercaDe: String;
     tituloAcercaDe: String;
     imagenAcercaDe: String;
     descripcionAcercaDe: String;
 
-    constructor(nombre: String, apellido: String, titulo: String, imagen: String, descripcion: String){
+    constructor(id: String, nombre: String, apellido: String, titulo: String, imagen: String, descripcion: String){
+        this.idAcercaDe = id;
         this.nombreAcercaDe = nombre;
         this.apellidoAcercaDe = apellido;
         this.tituloAcercaDe = titulo;

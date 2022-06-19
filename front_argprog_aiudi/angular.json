@@ -28,7 +28,8 @@
             ],
             "styles": [
               "C:/Users/Usuario/Documents/Juan/ArgProg/ProyectoFinal/FrontEnd/FrontEnd_AiudiJuan/front_argprog_aiudi/node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "C:/Users/Usuario/Documents/Juan/ArgProg/ProyectoFinal/FrontEnd/FrontEnd_AiudiJuan/front_argprog_aiudi/node_modules/bootstrap/dist/js/bootstrap.js"

@@ -55,7 +55,8 @@ public class HyFController {
                                       @RequestParam("paisHeaderFooter") String nvoPais,
                                       @RequestParam("imagenBotonEditar") String nvoEditar,
                                       @RequestParam("imagenBotonCerrar") String nvoCerrar,
-                                      @RequestParam("imagenBotonEliminar") String nvoEliminar){
+                                      @RequestParam("imagenBotonEliminar") String nvoEliminar,
+                                      @RequestParam("imagenBanner") String nvoBanner){
         HeaderyFooter hyf = ihyfservicio.finHeaderyFooter(id);
         
         hyf.setImagenHeaderFooter(nvoImagen);
@@ -67,10 +68,15 @@ public class HyFController {
         hyf.setImagenBotonEditar(nvoEditar);
         hyf.setImagenBotonCerrar(nvoCerrar);
         hyf.setImagenBotonEliminar(nvoEliminar);
+        hyf.setImagenBanner(nvoBanner);
                 
         ihyfservicio.saveHeaderyFooter(hyf);
         
         return hyf;
     }
     
+    @GetMapping("/hyf/traer/datos")
+    public HeaderyFooter finHeaderyFooter(){
+        return ihyfservicio.finHeaderyFooter((long)1);
+    }
 }

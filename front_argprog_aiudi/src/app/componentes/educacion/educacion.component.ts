@@ -9,8 +9,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
 export class EducacionComponent implements OnInit {
 
   educacion: any;
-  //educacion: educacion = new educacion("","","","");
-
+  
   constructor(private educacionService: EducacionService) { }
 
   ngOnInit(): void {

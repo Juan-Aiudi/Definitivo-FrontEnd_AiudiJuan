@@ -1,0 +1,103 @@
+
+<div class="container" (submit)="envioDeFormulario(editarFormulario.value)">
+  <form class="was-validated" [formGroup]="editarFormulario">
+      <br>
+      <h1>Modifique los datos de la persona</h1>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Nombre</span>
+          <input type="text" class="form-control" [(ngModel)]="personaAcDe.nombreAcercaDe" formControlName="nombreAcercaDe" required>
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Apellido</span>
+          <input type="text" class="form-control" [(ngModel)]="personaAcDe.apellidoAcercaDe" formControlName="apellidoAcercaDe" required >          
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Título</span>
+          <input type="text" class="form-control" [(ngModel)]="personaAcDe.tituloAcercaDe" formControlName="tituloAcercaDe" required>          
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Imagen</span>
+          <input type="text" class="form-control" [(ngModel)]="personaAcDe.imagenAcercaDe" formControlName="imagenAcercaDe" required>          
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Descripción</span>
+          <input type="text" class="form-control" [(ngModel)]="personaAcDe.descripcionAcercaDe" formControlName="descripcionAcercaDe" required>          
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-block">Presione este Botón para GUARDAR los cambios</button>
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">Presione este Botón para CANCELAR los cambio o volver a la página principal</button>
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="button" class="btn btn-success btn-block" (click)="funcionNuevo()">Presione este Botón para AGREGAR una nueva persona</button>
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="button" class="btn btn-danger btn-block" (click)="funcionEliminar()">Presione este Botón para ELIMINAR a esta persona</button>
+      </div>
+    </form>
+</div>
+
+
+
+<!--
+<div class=" form-group row" (submit)="envioDeFormulario(editarFormulario.value)" >
+<form [formGroup]="editarFormulario">
+    <div class="mb-3">
+      <label class="form-label" formControlName="idAcercaDe">ID: {{personaAcDe.idAcercaDe}}</label>                 
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <p>{{personaAcDe.nombreAcercaDe}}</p>
+        <textarea name="editarNombre" id="idEditarNombre" rows="1" [ngStyle]="{ 'width': '99%'}" [(ngModel)]="personaAcDe.nombreAcercaDe" formControlName="nombreAcercaDe" ></textarea>      
+    </div>
+    
+    <div class="mb-3">
+      <label class="form-label">Apellido</label>
+      <p>{{personaAcDe.apellidoAcercaDe}}</p>
+      <textarea name="editarApellido" id="idEditarApellido" rows="1" [ngStyle]="{ 'width': '99%'}" [(ngModel)]="personaAcDe.apellidoAcercaDe" formControlName="apellidoAcercaDe" ></textarea>      
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <p>{{personaAcDe.tituloAcercaDe}}</p>
+        <textarea name="editarTitulo" id="idEditarTitulo" rows="1" [ngStyle]="{ 'width': '99%'}" [(ngModel)]="personaAcDe.tituloAcercaDe" formControlName="tituloAcercaDe" ></textarea>      
+    </div>
+  
+    <div class="mb-3">
+        <label class="form-label">Imagen</label>
+        <p>{{personaAcDe.imagenAcercaDe}}</p>
+        <textarea name="editarImagen" id="idEditarImagen" rows="3" [ngStyle]="{ 'width': '99%'}" [(ngModel)]="personaAcDe.imagenAcercaDe" formControlName="imagenAcercaDe" ></textarea>        
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Descripcion</label>
+      <p>{{personaAcDe.descripcionAcercaDe}}</p>
+      <textarea name="editarDescripcion" id="idEditarDescripcion" rows="3" [ngStyle]="{ 'width': '99%'}" [(ngModel)]="personaAcDe.descripcionAcercaDe" formControlName="descripcionAcercaDe" ></textarea>      
+    </div>
+
+    <button type="submit" class="btn btn-secondary"  (click)="funcionVolverHome()">Volver</button>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="funcionEliminar()">Eliminar</button>
+    <button type="button" class="btn btn-success" (click)="funcionNuevo()">Nueva persona</button>
+  </form>
+</div>
+-->
+
+
+
+<!--<input class="form-control">-->
+<!--<input type="text" class="form-control" ngModel="{{personaAcDe.imagenAcercaDe}}" value="{{personaAcDe.imagenAcercaDe}}">-->
+<!--<input class="form-control">-->
+<!--<input class="form-control" >-->
+<!--<input class="form-control">-->

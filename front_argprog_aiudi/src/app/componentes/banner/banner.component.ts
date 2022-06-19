@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderyfooterService } from 'src/app/service/headeryfooter.service';
 
 @Component({
   selector: 'app-banner',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  headerfooter: any;
+
+  constructor(private hyfService: HeaderyfooterService) { }
 
   ngOnInit(): void {
+    this.hyfService.getHeaderFooter().subscribe(data => {this.headerfooter = data});
   }
 
 }

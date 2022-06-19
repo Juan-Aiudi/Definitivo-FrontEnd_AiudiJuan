@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HeaderyfooterService } from 'src/app/service/headeryfooter.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  headerfooter: any;
+
+  constructor(private router: Router, private hyfService: HeaderyfooterService) { }
 
   ngOnInit(): void {
+    this.hyfService.getHeaderFooter().subscribe(data => {this.headerfooter = data});
+  }
+
+  funcionLogin(){
+    this.router.navigate(['']);
   }
 
 }

@@ -1,14 +1,15 @@
 <div class="row">
     <div class="contenedorlogoyredes">
         <div class="muestralogoargprog">
-            <img src="../../../assets/Logo_argentina-programa2.jpg" class="img-fluid" id="logo"><!--La imagen es responsive con ing-fluid-->
-            <p>Argentina Programa #YoProgramo</p>
+            <img src="{{headerfooter.imagenHeaderFooter}}" class="img-fluid" id="logo"><!--La imagen es responsive con ing-fluid-->
+            <p>{{headerfooter.nombreHeaderFooter}}</p>
         </div>
         <div class="accesosaredes">
-            <a href=""><img src="../../../assets/Facebook.jpg" id="facebook"></a>
-            <a href=""><img src="../../../assets/Instagram-logo.jpg" id="instagram"></a>
-            <a href=""><img src="../../../assets/Twitter.jpg" id="twitter"></a>
-            <button type="button" class="btn btn-success">Login</button>
+            <!--Con el atributo target="_blank" logramos que el link se abra en una NUEVA pestaña-->
+            <a href="https://www.facebook.com/juancarlos.aiudi" target="_blank"><img src="../../../assets/Facebook.jpg" id="facebook" title="acceso directo a mi página de Facebook"></a>
+            <a href="https://www.instagram.com/juancarlosaiudi" target="_blank"><img src="../../../assets/Instagram-logo.jpg" id="instagram" title="acceso directo a mi página de Instagram"></a>
+            <a href="https://twitter.com/juancarlosaiudi" target="_blank"><img src="../../../assets/Twitter.jpg" id="twitter" title="acceso directo a mi página de Twitter"></a>
+            <button type="button" class="btn btn-success" title="Presione el botón para habilitarse" (click)="funcionLogin()">Login</button>
         </div>        
     </div>
     <div class="divoculto">h</div>

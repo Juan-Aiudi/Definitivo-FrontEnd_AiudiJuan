@@ -61,4 +61,9 @@ public class RedesController {
         return red;
     }
     
+    @GetMapping("/redes/traer/red/{id}")
+    public Redes findRedes(@PathVariable Long id){
+        return iredesservicio.finRedes(id);
+    }
+    
 }

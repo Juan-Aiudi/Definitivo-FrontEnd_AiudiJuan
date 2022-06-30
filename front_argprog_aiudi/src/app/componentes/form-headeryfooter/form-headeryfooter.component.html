@@ -1,0 +1,68 @@
+<div class="container">
+    <form class="was-validated" [formGroup]="editarFormularioHyF" (ngSubmit)="envioDeFormularioHyF(editarFormularioHyF.value)">
+        <br>
+        <h1>Modifique los datos deseados para este formulario</h1>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Imagen header</span>
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenHeaderFooter" required>
+        </div>
+        <br>
+        <div class="form-group row">
+            <div class="input-group col">
+                <span class="input-group-text">Nombre header</span>
+                <input type="text" class="form-control" placeholder="Ingrese el nombre que estará visualizado en el header" formControlName="nombreHeaderFooter" required>          
+            </div>
+            <br>
+            <div class="input-group col">
+                <span class="input-group-text">Fecha footer</span>
+                <input type="text" class="form-control" placeholder="Ingrese la fecha que estará visualizada en el footer" formControlName="fechaHeaderFooter" required>          
+            </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <div class="input-group col">
+                <span class="input-group-text">Ciudad footer</span>
+                <input type="text" class="form-control" placeholder="Ingrese la ciudad que estará visualizada en el footer" formControlName="ciudadHeaderFooter" required>          
+            </div>
+            <br>
+            <div class="input-group col">
+                <span class="input-group-text">Provincia footer</span>
+                <input type="text" class="form-control" placeholder="Ingrese la provincia que estará visualizada en el footer" formControlName="provinciaHeaderFooter" required>          
+            </div>
+            <br>
+            <div class="input-group col">
+                <span class="input-group-text">Pais footer</span>
+                <input type="text" class="form-control" placeholder="Ingrese el Pais que estará visualizado en el footer" formControlName="paisHeaderFooter" required>          
+            </div>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Botón editar</span>
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenBotonEditar" required>          
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Botón cerrar</span>
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenBotonCerrar" required>          
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Botón eliminar</span>
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenBotonEliminar" required>          
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Imagen BANNER</span>
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenBanner" required>          
+        </div>
+        <br>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos modificados</button>
+        </div>
+        <br>
+        <div class="d-grid">
+            <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
+        </div>
+      </form>
+</div>

@@ -1,0 +1,71 @@
+
+<div class="container mt-3">
+    <h2>Listado de redes sociales</h2>
+    <p>Seleccione la red social que desee modificar:</p>            
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Link</th>
+          <!--<th>Imagen</th>-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of redes" (click)="funcionSeleccion(item.idRed)">
+          <td >{{item.nombreRed}}</td>
+          <td>{{item.linkRed}}</td>
+          <!--<td>{{item.imagenRed}}</td>-->
+        </tr>        
+      </tbody>
+      
+    </table>
+    <br  [ngStyle]="{'display': estadoDisplayBoton}">
+    <div class="d-grid" [ngStyle]="{'display': estadoDisplayBoton}">
+        <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()"  [ngStyle]="{'display': estadoDisplayBoton}">VOLVER. Presione este Botón para volver a la página principal</button>
+    </div>
+    <br [ngStyle]="{'display': estadoDisplayBoton}">
+    <div class="d-grid" [ngStyle]="{'display': estadoDisplayBoton}">
+      <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaRed()" [ngStyle]="{'display': estadoDisplayBoton}">Presione este Botón para AGREGAR una nueva red</button>
+  </div>
+</div>
+
+<!--AQUÍ CREO EL FORMULARIO-->
+<div class="container" [ngStyle]="{'display': estadoDisplayFormulario}">
+  <form class="was-validated" [formGroup]="editarFormularioRedes" (ngSubmit)="envioDeFormularioRedes(editarFormularioRedes.value)">
+      <br>
+      <h2>Modifique los datos de la red</h2>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Nombre de la red</span>
+          <input type="text" class="form-control" placeholder="Ingrese el nombre de la red" formControlName="nombreRed" required>
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Link a la red</span>
+          <input type="text" class="form-control" placeholder="Ingrese el link a la red" formControlName="linkRed" required>          
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Imagen de la red</span>
+          <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenRed" required>          
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos modificados del proyecto</button>
+      </div>
+      <br>
+      <div class="btn-group">
+          <div class="d-grid col-4">
+              <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
+          </div>
+          
+          <div class="d-grid col-4">
+              <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaRed()">Presione este Botón para AGREGAR una nueva red</button>
+          </div>
+          
+          <div class="d-grid col-4">
+              <button type="button" class="btn btn-danger btn-block" (click)="funcionEliminar()">Presione este Botón para ELIMINAR esta red</button>
+          </div>
+      </div>
+    </form>
+</div>

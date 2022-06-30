@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IDatosPersona } from '../model/IdatosPersona.';
 import { personaAcDe } from '../model/personaAcDe.model';
 
 @Injectable({
@@ -32,18 +31,9 @@ export class PersonaAcDeService {
   public putModificarUnaPersona(id: any, nombre: String, apellido: String, titulo: String, imagen: String, descripcion: String, form:personaAcDe): Observable<any>{
     return this.http.put<any>(this.URL+'modificar/'+id+'?nombreAcercaDe='+nombre+'&apellidoAcercaDe='+apellido+'&tituloAcercaDe='+titulo+'&imagenAcercaDe='+imagen+'&descripcionAcercaDe='+descripcion, form);
   }
-  
 
-  /*
-  public putModificarUnaPersona(form:personaAcDe): Observable<any>{
-    console.log('Imprimo el form desde la función putModificarUnaPersona');
-    console.log(form);
-
-    let datos = form.idAcercaDe+'?nombreAcercaDe='+form.nombreAcercaDe+'&apellidoAcercaDe='+form.apellidoAcercaDe+'&tituloAcercaDe='+form.tituloAcercaDe+'&imagenAcercaDe='+form.imagenAcercaDe+'&descripcionAcercaDe='+form.descripcionAcercaDe;
-
-    //return this.http.put<any>('/adMod/modificar', form);
-    return this.http.put<personaAcDe>(this.URL+'modificar/'+datos, {datos});
+  public postNuevaPersona(form: personaAcDe): Observable<any>{
+    return this.http.post<any>(this.URL+'crear', form);
   }
-  */
   
 }

@@ -95,7 +95,7 @@
                 ></circle-progress>
         
     </div>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4">
+    <div class="text-center col-sm-6 col-md-4 col-lg-4" (click)="funcionEditar(1)">
             <!-- You can now use it in app.component.html -->
                 <circle-progress
                     [percent]="100"
@@ -112,6 +112,25 @@
                     [subtitle]="'COMUNICACIÓN'"
                     [subtitleFontSize]="'10px'"
                 ></circle-progress>
+                <!-- ESTO SON LOS VALORES QUE CAMBIAN
+                    [percent]="100"
+                    [subtitle]="'COMUNICACIÓN'"
+                    [subtitleFontSize]="'10px'"
+                -->
         
     </div>
+    
+    <div class="d-grid">
+        <br>
+        <br>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-success btn-block">Presione este Botón para EDITAR las habilidades duras</button>
+            
+            <button type="submit" class="btn btn-success btn-block">Presione este Botón para EDITAR las habilidades blandas</button>
+        </div>
+    </div>
 </div>
+
+<!--
+    Las habilidades duras representan aquellas cosas que has aprendido a hacer o a usar, como las herramientas, tecnologías u otras competencias. Las habilidades blandas son los rasgos interpersonales que has desarrollado con el tiempo, como las comunicaciones efectivas, la credibilidad que generes o la generosidad.
+-->

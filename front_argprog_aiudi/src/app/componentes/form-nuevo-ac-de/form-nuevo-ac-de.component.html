@@ -1,39 +1,39 @@
 <div class="container">
-    <form class="was-validated" >
+    <form class="was-validated" [formGroup]="nuevoFormulario" (ngSubmit)="envioDeFormulario(nuevoFormulario.value)">
         <br>
         <h1>Ingrese los datos requeridos de la nueva persona</h1>
         <br>
         <div class="input-group">
             <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" placeholder="Ingrese el nombre" required>
+            <input type="text" class="form-control" placeholder="Ingrese el nombre" formControlName="nombreAcercaDe" required>
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-text">Apellido</span>
-            <input type="text" class="form-control" placeholder="Ingrese el apellido" required>          
+            <input type="text" class="form-control" placeholder="Ingrese el apellido" formControlName="apellidoAcercaDe" required>          
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-text">Título</span>
-            <input type="text" class="form-control" placeholder="Ingrese el título obtenido" required>          
+            <input type="text" class="form-control" placeholder="Ingrese el título obtenido" formControlName="tituloAcercaDe" required>          
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-text">Imagen</span>
-            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" required>          
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenAcercaDe" required>          
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-text">Descripción</span>
-            <input type="text" class="form-control" placeholder="Ingrese una descripción" required>          
+            <input type="text" class="form-control" placeholder="Ingrese una descripción" formControlName="descripcionAcercaDe" required>          
         </div>
         <br>
         <div class="d-grid">
-            <button type="button" class="btn btn-primary btn-block">Presione este Botón para guardar los datos de la nueva persona</button>
+            <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos de la nueva persona</button>
         </div>
         <br>
         <div class="d-grid">
-            <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">O presione este Botón para cancelar el envío y volver a la página principal</button>
+            <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
         </div>
       </form>
 </div>

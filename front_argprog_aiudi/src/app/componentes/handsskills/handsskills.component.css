@@ -4,3 +4,20 @@ div{
 .row{
     padding: 20px;
 }
+
+h2{
+    text-align: center;
+}
+
+h2:hover{
+    background-color: rgb(160, 160, 202);
+}
+
+button{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.text-center:hover{
+    background-color: rgb(160, 160, 202);
+}

@@ -7,7 +7,11 @@ div{
 }
 
 .clase-contenedora{
-    width: auto;
+    width: auto;    
+}
+
+p, h3, img{
+    padding: 10px;
 }
 
 .texto, .imagen{
@@ -17,10 +21,21 @@ div{
 
 .img-cambios{
     box-shadow: 10px 10px 30px blue;
-    border-radius: 10%;    
+    border-radius: 20%;    
 }
 
 h2{
     text-align: center;
 }
 
+p:hover{
+    background-color: rgb(160, 160, 202);
+}
+
+h3:hover{
+    background-color: rgb(160, 160, 202);
+}
+
+img:hover{
+    background-color: rgb(160, 160, 202);
+}

@@ -1,11 +1,12 @@
 export class educacionModel{
-    idEducacion?: number; //Con el símbolo ? le digo que este dato NO es necesario
+    idEducacion: Number; //Con el símbolo ? le digo que este dato NO es necesario
     tituloObtenidoEducacion: String;
     tiempoDemandadoEducacion: String;
     imagenEducacion: String;
     descripcionEducacion: String;
     
-    constructor(titulo: String, tiempo: String, imagen: String, descripcion: String){
+    constructor(id: Number, titulo: String, tiempo: String, imagen: String, descripcion: String){
+        this.idEducacion = id;
         this.tituloObtenidoEducacion = titulo;
         this.tiempoDemandadoEducacion = tiempo;
         this.imagenEducacion = imagen;

@@ -60,4 +60,9 @@ public class HabBlandasController {
         
         return habilidades;
     }
+    
+    @GetMapping("/habblandas/traer/habilidad/{id}")
+    public HabilidadesBlandas findBlandas(@PathVariable Long id){
+        return ihabblandasservicio.finHabilidadesBlandas(id);
+    }
 }

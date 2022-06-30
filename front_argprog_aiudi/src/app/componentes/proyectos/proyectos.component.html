@@ -2,13 +2,13 @@
     <h2>Proyectos Realizados</h2>
     <h2></h2>
     <div *ngFor="let item of proyecto" class="row">
-        <div class="clase-contenedora">
-            <div class="col-sm-12 col-md-7 col-lg-7 texto">
+        <div class="clase-contenedora ">
+            <div class="col-sm-12 col-md-7 col-lg-7 texto " (click)="funcionEditar(item.idProyectos)">
                 <h3>{{item.nombreDelProyecto}}</h3>
                 <p>{{item.descripcionProyecto}}</p>
             </div>
             <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 imagen">
-                <img src="{{item.imagenProyecto}}" class="img-fluid img-cambios">
+                <img src="{{item.imagenProyecto}}" class="img-fluid img-cambios" (click)="funcionEditar(item.idProyectos)" >
             </div>
         </div>
         <h2></h2>

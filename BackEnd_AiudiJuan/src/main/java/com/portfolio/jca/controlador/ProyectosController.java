@@ -61,4 +61,9 @@ public class ProyectosController {
         return proyecto;
     }
     
+    @GetMapping("/proyectos/traer/proyecto/{id}")
+    public Proyectos findProyecto(@PathVariable Long id){
+        return iproyectosservicio.finProyectos(id);
+    }
+    
 }

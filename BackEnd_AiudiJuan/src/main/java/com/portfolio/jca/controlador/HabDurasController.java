@@ -61,4 +61,8 @@ public class HabDurasController {
         return habilidades;
     }
     
+    @GetMapping("/habduras/traer/habilidad/{id}")
+    public HabilidadesDuras findDuras(@PathVariable Long id){
+        return ihabdurasservicio.finHabilidadesDuras(id);
+    }
 }

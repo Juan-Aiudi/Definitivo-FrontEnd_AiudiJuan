@@ -1,11 +1,12 @@
 export class experienciaLabModel{
-    idExpLab?: number; //Con el símbolo ? le digo que este dato NO es necesario
+    idExpLab: Number; //Con el símbolo ? le digo que este dato NO es necesario
     lugarExpLab: String;
     actualoAnterioryTiempoExpLab: String;
     imagenExpLab: String;
     descripcionExpLab: String;
     
-    constructor(lugar: String, tiempo: String, imagen: String, descripcion: String){
+    constructor(id: Number, lugar: String, tiempo: String, imagen: String, descripcion: String){
+        this.idExpLab = id;
         this.lugarExpLab = lugar;
         this.actualoAnterioryTiempoExpLab = tiempo;
         this.imagenExpLab = imagen;

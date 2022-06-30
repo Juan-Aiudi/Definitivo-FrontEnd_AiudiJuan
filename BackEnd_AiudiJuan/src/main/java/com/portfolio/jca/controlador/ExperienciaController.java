@@ -62,4 +62,9 @@ public class ExperienciaController {
         
         return experiencia;
     }
+    
+    @GetMapping("/experiencia/traer/experiencia/{id}")
+    public ExperienciaLaboral finExperienciaLaboral(@PathVariable Long id){
+        return iexperienciaservicio.finExperiencia(id);
+    }
 }

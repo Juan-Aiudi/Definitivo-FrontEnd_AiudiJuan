@@ -18,4 +18,12 @@ export class AlertasService {
     this.toastr.error(texto, titulo);
   }
 
+  mostrarMensajeInfo(texto:string, titulo:string){
+    this.toastr.info(texto, titulo);
+  }
+
+  mostrarMensajeWarning(texto:string, titulo:string){
+    this.toastr.warning(texto, titulo);
+  }
+
 }

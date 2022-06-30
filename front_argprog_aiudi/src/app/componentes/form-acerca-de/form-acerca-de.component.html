@@ -1,6 +1,6 @@
 
-<div class="container" (submit)="envioDeFormulario(editarFormulario.value)">
-  <form class="was-validated" [formGroup]="editarFormulario">
+<div class="container" >
+  <form class="was-validated" [formGroup]="editarFormulario" (submit)="envioDeFormulario(editarFormulario.value)">
       <br>
       <h1>Modifique los datos de la persona</h1>
       <br>
@@ -34,7 +34,7 @@
       </div>
       <br>
       <div class="d-grid">
-          <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">Presione este Botón para CANCELAR los cambio o volver a la página principal</button>
+          <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para CANCELAR los cambio o volver a la página principal</button>
       </div>
       <br>
       <div class="d-grid">

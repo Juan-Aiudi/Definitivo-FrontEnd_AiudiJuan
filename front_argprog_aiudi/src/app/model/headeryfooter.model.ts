@@ -1,5 +1,5 @@
 export class headeryfooterModel{
-    idEducacion?: number; //Con el símbolo ? le digo que este dato NO es necesario
+    idHeaderFooter: String; //Con el símbolo ? le digo que este dato NO es necesario
     imagenHeaderFooter: String;
     nombreHeaderFooter: String;
     fechaHeaderFooter: String;
@@ -11,7 +11,8 @@ export class headeryfooterModel{
     imagenBotonEliminar: String;
     imagenBanner: String;
     
-    constructor(imagenheader: String, nombreheader: String, fechafooter: String, ciudadfooter: String, provinciafooter: String, paisfooter: String, imagenbuttoneditar: String, imagenbuttoncerrar: String, imagenbuttoneliminar: String, imagenbanner: String){
+    constructor(id: String, imagenheader: String, nombreheader: String, fechafooter: String, ciudadfooter: String, provinciafooter: String, paisfooter: String, imagenbuttoneditar: String, imagenbuttoncerrar: String, imagenbuttoneliminar: String, imagenbanner: String){
+        this.idHeaderFooter = id;
         this.imagenHeaderFooter = imagenheader;
         this.nombreHeaderFooter = nombreheader;
         this.fechaHeaderFooter = fechafooter;

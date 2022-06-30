@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { IDatosPersona } from 'src/app/model/IdatosPersona.';
 import { personaAcDe } from 'src/app/model/personaAcDe.model';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { PersonaAcDeService } from 'src/app/service/persona-ac-de.service';
@@ -21,7 +20,7 @@ export class FormAcercaDeComponent implements OnInit {
   // datosPersona:personaAcDe;
   
   editarFormulario = new FormGroup({
-    //idAcercaDe: new FormControl(''),
+    idAcercaDe: new FormControl(''),
     nombreAcercaDe: new FormControl(''),
     apellidoAcercaDe: new FormControl(''),
     tituloAcercaDe: new FormControl(''),
@@ -36,8 +35,10 @@ export class FormAcercaDeComponent implements OnInit {
 
     this.personaAcDeService.getTraerUnaPersona(idpersona).subscribe(data => {
       this.personaAcDe = data;
-      console.log('Imprimo personaAcDe desde el formulario: '),
-      console.log(this.personaAcDe),
+      console.log('Imprimo personaAcDe desde el formulario: ');
+      console.log(this.personaAcDe);
+      console.log('Edito el formulario');
+
       this.editarFormulario.setValue({
         'idAcercaDe': this.personaAcDe.idAcercaDe,
         'nombreAcercaDe': this.personaAcDe.nombreAcercaDe,
@@ -46,21 +47,16 @@ export class FormAcercaDeComponent implements OnInit {
         'imagenAcercaDe': this.personaAcDe.imagenAcercaDe,
         'descripcionAcercaDe': this.personaAcDe.descripcionAcercaDe
       });
-      console.log('Imprimo el editarFormulario: ')
-      console.log(this.editarFormulario.value)
+
+      console.log('Imprimo el editarFormulario: ');
+      console.log(this.editarFormulario.value);
 
     });
-
-    //'idAcercaDe': this.personaAcDe.idAcercaDe, Esta línea se la saqué la formulario
-    //this.personaAcDeService.getTraerUnaPersona(idpersona).subscribe(data => {
-    //  this.personaAcDe = data, console.log('Este es el console log del formulario: '+ data)
-    //})    
+        
   }
 
-  funcionVolverHome(){
-    
-    this.router.navigate(['/home']);
-    
+  funcionVolverHome(){   
+    this.router.navigate(['/home']);    
   }
 
   funcionNuevo(){
@@ -74,21 +70,12 @@ export class FormAcercaDeComponent implements OnInit {
     console.log('Se elimina la persona con la ID: ');
     console.log(this.personaAcDe.idAcercaDe);
     
-    this.router.navigate(['/home']);
+    this.alertas.mostrarMensajeWarning('La persona seleccionada se ha ELIMINADO, presione VOLVER para dirigirse a la página principal', 'Atención !!!');
+    
   }
 
   envioDeFormulario(form: personaAcDe){
-
-    /*
-    console.log('Imprimo el formulario desde la funcion envioDeFormulario: ');
-    form.idAcercaDe = this.personaAcDe.idAcercaDe;
-    console.log(form);
-
-    this.personaAcDeService.putModificarUnaPersona(form).subscribe(data =>{
-      console.log('Estoy imprimiendo desde el llamado a la función put dentro de la función envioDeFormulario');
-      console.log(data);
-    })
-    */
+    
     form.idAcercaDe = this.personaAcDe.idAcercaDe;
     console.log('Imprimo el form');
     console.log(form);
@@ -103,29 +90,9 @@ export class FormAcercaDeComponent implements OnInit {
     this.personaAcDeService.putModificarUnaPersona(form.idAcercaDe, form.nombreAcercaDe, form.apellidoAcercaDe, form.tituloAcercaDe, form.imagenAcercaDe, form.descripcionAcercaDe, form).subscribe(data =>{
       console.log('Imprimo la data que tengo dentro de envioDeFormulario cuando llamo al putModificar: ');  
       console.log(data);
-      this.alertas.mostrarMensaje('Persona modificada con éxito', 'Enhorabuena!!!');
-    })
-
-    /*-----------------------------------------------------
-    this.personaAcDeService.putModificarUnaPersona(this.personaAcDe.idAcercaDe, this.personaAcDe.nombreAcercaDe, this.personaAcDe.apellidoAcercaDe, this.personaAcDe.tituloAcercaDe, this.personaAcDe.imagenAcercaDe, this.personaAcDe.descripcionAcercaDe, form).subscribe(data =>{
-      console.log('Imprimo la data que tengo dentro de envioDeFormulario cuando llamo al putModificar: ');  
-      console.log(data);
-      this.alertas.mostrarMensaje('Persona modificada con éxito', 'Enhorabuena!!!');
+      this.alertas.mostrarMensaje('Persona modificada con éxito. Presione VOLVER para dirigirse a la página principal', 'Enhorabuena!!!');
     })
     
-    --------------------------------------------------------*/
-
-    //this.router.navigate(['/home']);
-    
   }
-
-  /*
-  mostrarMensaje(texto:string, titulo:string){
-    this.toastr.success(texto, titulo);
-  }
-
-  mostrarMensajeError(texto:string, titulo:string){
-    this.toastr.error(texto, titulo);
-  }
-  */
+  
 }

@@ -1,0 +1,35 @@
+<div class="container">
+    <form class="was-validated" [formGroup]="nuevoFormularioExp" (ngSubmit)="envioDeFormularioExp(nuevoFormularioExp.value)">
+        <br>
+        <h1>Ingrese los datos requeridos de la nueva experiencia laboral</h1>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Lugar</span>
+            <input type="text" class="form-control" placeholder="Ingrese el lugar" formControlName="lugarExpLab" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Actual o anterior y período</span>
+            <input type="text" class="form-control" placeholder="Ingrese si es actual o anterior y período" formControlName="actualoAnterioryTiempoExpLab" required>          
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Imagen</span>
+            <input type="text" class="form-control" placeholder="Ingrese la dirección de la imagen" formControlName="imagenExpLab" required>          
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Descripción</span>
+            <input type="text" class="form-control" placeholder="Ingrese una descripción" formControlName="descripcionExpLab" required>          
+        </div>
+        <br>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos de la nueva experiencia</button>
+        </div>
+        <br>
+        <div class="d-grid">
+            <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
+        </div>
+      </form>
+</div>
+

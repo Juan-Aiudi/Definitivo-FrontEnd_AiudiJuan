@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HabilidadesService } from 'src/app/service/habilidades.service';
+
 
 @Component({
   selector: 'app-handsskills',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HandsskillsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private habilidadesService: HabilidadesService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  funcionEditar(id: any){
+    console.log('Imprimo la ID desde el componente TS de proyectos: ');
+    console.log(id);
+    this.router.navigate(['formhabilidades']);
   }
 
 }

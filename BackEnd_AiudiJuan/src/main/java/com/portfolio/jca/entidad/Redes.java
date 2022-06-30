@@ -22,7 +22,7 @@ public class Redes {
     private Long idRed;
     
     @NotNull
-    @Size(min = 1, max = 15, message = "no cumple con la longitud deseada entre 1 y 15 caracteres")
+    @Size(min = 1, max = 100, message = "no cumple con la longitud deseada entre 1 y 100 caracteres")
     private String nombreRed;
     
     @NotNull

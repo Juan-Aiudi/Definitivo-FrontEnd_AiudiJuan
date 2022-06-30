@@ -20,6 +20,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FormNuevoAcDeComponent } from './componentes/form-nuevo-ac-de/form-nuevo-ac-de.component';
+import { FormExperienciaComponent } from './componentes/form-experiencia/form-experiencia.component';
+import { FormNuevaExperienciaComponent } from './componentes/form-nueva-experiencia/form-nueva-experiencia.component';
+import { FormEducacionComponent } from './componentes/form-educacion/form-educacion.component';
+import { FormNuevaEducacionComponent } from './componentes/form-nueva-educacion/form-nueva-educacion.component';
+import { FormHeaderyfooterComponent } from './componentes/form-headeryfooter/form-headeryfooter.component';
+import { FormProyectosComponent } from './componentes/form-proyectos/form-proyectos.component';
+import { FormNuevoProyectoComponent } from './componentes/form-nuevo-proyecto/form-nuevo-proyecto.component';
+import { FormRedesComponent } from './componentes/form-redes/form-redes.component';
+import { FormNuevaRedComponent } from './componentes/form-nueva-red/form-nueva-red.component';
+import { FormHabilidadesComponent } from './componentes/form-habilidades/form-habilidades.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +45,17 @@ import { FormNuevoAcDeComponent } from './componentes/form-nuevo-ac-de/form-nuev
     HomeComponent,
     LoginComponent,
     FormAcercaDeComponent,
-    FormNuevoAcDeComponent
+    FormNuevoAcDeComponent,
+    FormExperienciaComponent,
+    FormNuevaExperienciaComponent,
+    FormEducacionComponent,
+    FormNuevaEducacionComponent,
+    FormHeaderyfooterComponent,
+    FormProyectosComponent,
+    FormNuevoProyectoComponent,
+    FormRedesComponent,
+    FormNuevaRedComponent,
+    FormHabilidadesComponent
   ],
   imports: [
     BrowserModule,

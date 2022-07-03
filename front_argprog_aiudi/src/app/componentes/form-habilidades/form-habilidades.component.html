@@ -1,19 +1,33 @@
-<div class="container">
+<!--Primeros dos botones para elegir el tipo de habilidad a editar-->
+<div class="container" [ngStyle]="{'display': estadoDisplayBotonEleccion}">
     <div class="d-grid">
         <br>
-        <br>
         <div class="btn-group">
-            <button type="submit" class="btn btn-success btn-block eleccion">Presione este Botón para EDITAR las habilidades duras</button>
+            <button type="text" class="btn btn-success btn-block eleccion" (click)="eleccion(true)" >Presione este Botón para EDITAR las habilidades duras</button>
             
-            <button type="submit" class="btn btn-success btn-block eleccion">Presione este Botón para EDITAR las habilidades blandas</button>
+            <button type="text" class="btn btn-success btn-block eleccion" (click)="eleccion(false)" >Presione este Botón para EDITAR las habilidades blandas</button>
         </div>
-    </div>
+        <br>
+        <p class="imagen"><img src="../../../assets/Robot_1.jpg"></p>        
+    </div>    
 </div>
 
-<div class="container mt-3">
+<div class="container" [ngStyle]="{'display': estadoDisplayBotonEleccion}">
+  <form class="was-validated">
+    <div class="d-grid col-12">
+      
+      <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()"  [ngStyle]="{'display': estadoDisplayBoton}">VOLVER. Presione este Botón para volver a la página principal</button>
+      <br>
+      <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()" >Presione este Botón para AGREGAR una nueva habilidad</button>
+    </div>
+  </form>
+</div>
+
+<!--Listado de habilidades según el tipo elegido anteriormente-->
+<div class="container mt-3" [ngStyle]="{'display': estadoDisplayDuras}">
     <h2>Listado de habilidades</h2>
     <p>Seleccione la habilidad que desee modificar:</p>            
-    <table class="table table-hover">
+    <table class="table table-hover" >
       <thead>
         <tr>
           <th>Habilidad</th>
@@ -22,47 +36,78 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of habilidades" (click)="funcionSeleccion(item.idRed)">
-          <td >{{item.nombreRed}}</td>
-          <td>{{item.linkRed}}</td>
-          <!--<td>{{item.imagenRed}}</td>-->
+        <tr *ngFor="let item of habilidades" (click)="funcionSeleccion(item.idHabDuras, true)">
+          <td >{{item.subtituloDuras}}</td>
+          <td>{{item.porcentajeDuras}}</td>
+          <td>{{item.sizeSubTituloDuras}}</td>
         </tr>        
       </tbody>
-      
     </table>
+    
     <br  [ngStyle]="{'display': estadoDisplayBoton}">
     <div class="d-grid" [ngStyle]="{'display': estadoDisplayBoton}">
         <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()"  [ngStyle]="{'display': estadoDisplayBoton}">VOLVER. Presione este Botón para volver a la página principal</button>
     </div>
     <br [ngStyle]="{'display': estadoDisplayBoton}">
     <div class="d-grid" [ngStyle]="{'display': estadoDisplayBoton}">
-      <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()" [ngStyle]="{'display': estadoDisplayBoton}">Presione este Botón para AGREGAR una nueva red</button>
+      <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()" [ngStyle]="{'display': estadoDisplayBoton}">Presione este Botón para AGREGAR una nueva habilidad</button>
   </div>
 </div>
 
-<!--AQUÍ CREO EL FORMULARIO-->
-<div class="container" [ngStyle]="{'display': estadoDisplayFormulario}">
-    <form class="was-validated" [formGroup]="editarFormularioHabilidades" (ngSubmit)="envioDeFormularioHabilidades(editarFormularioHabilidades.value)">
+<div class="container mt-3" [ngStyle]="{'display': estadoDisplayBlandas}">
+    <h2>Listado de habilidades</h2>
+    <p>Seleccione la habilidad que desee modificar:</p>            
+    <table class="table table-hover" >
+      <thead>
+        <tr>
+          <th>Habilidad</th>
+          <th>Porcentaje</th>
+          <th>Tamaño letra</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of habilidades" (click)="funcionSeleccion(item.idHabBlandas, false)">
+          <td >{{item.subtituloBlandas}}</td>
+          <td>{{item.porcentajeBlandas}}</td>
+          <td>{{item.sizeSubTituloBlandas}}</td>
+        </tr>        
+      </tbody>
+    </table>
+    
+    <br  [ngStyle]="{'display': estadoDisplayBoton}">
+    <div class="d-grid" [ngStyle]="{'display': estadoDisplayBoton}">
+        <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()"  [ngStyle]="{'display': estadoDisplayBoton}">VOLVER. Presione este Botón para volver a la página principal</button>
+    </div>
+    <br [ngStyle]="{'display': estadoDisplayBoton}">
+    <div class="d-grid" [ngStyle]="{'display': estadoDisplayBoton}">
+      <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()" [ngStyle]="{'display': estadoDisplayBoton}">Presione este Botón para AGREGAR una nueva habilidad</button>
+    </div>
+    
+</div>
+
+<!--AQUÍ EDITO EL FORMULARIO de Habilidades DURAS-->
+<div class="container" [ngStyle]="{'display': estadoDisplayFormularioDuras}">
+    <form class="was-validated" [formGroup]="editarFormularioHabilidadesDuras" (ngSubmit)="envioDeFormularioHabilidadesDuras(editarFormularioHabilidadesDuras.value)">
         <br>
-        <h2>Modifique los datos de la habilidad</h2>
+        <h2>Modifique los datos que desee sobre la habilidad seleccionada</h2>
         <br>
         <div class="input-group">
             <span class="input-group-text">Nombre de la habilidad</span>
-            <input type="text" class="form-control" placeholder="Ingrese el nombre de la habilidad" formControlName="nombreRed" required>
+            <input type="text" class="form-control" placeholder="Ingrese el nombre de la habilidad" formControlName="subtituloDuras" required>
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-text">Porcentaje de avance</span>
-            <input type="text" class="form-control" placeholder="Complete el porcentaje de avance en esta habilidad" formControlName="linkRed" required>          
+            <input type="text" class="form-control" placeholder="Complete el porcentaje de avance en esta habilidad" formControlName="porcentajeDuras" required>          
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-text">Tamaño de letra</span>
-            <input type="text" class="form-control" placeholder="Tamaño de letra, se expresa 10, 15 , 20, etc" formControlName="imagenRed" required>          
+            <input type="text" class="form-control" placeholder="Tamaño de letra, se expresa 10, 15 , 20, etc" formControlName="sizeSubTituloDuras" required>          
         </div>
         <br>
         <div class="d-grid">
-            <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos modificados del proyecto</button>
+            <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos modificados de la habilidad</button>
         </div>
         <br>
         <div class="btn-group">
@@ -71,13 +116,54 @@
             </div>
             
             <div class="d-grid col-4">
-                <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()">Presione este Botón para AGREGAR una nueva red</button>
+                <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()">Presione este Botón para AGREGAR una nueva habilidad</button>
             </div>
             
             <div class="d-grid col-4">
-                <button type="button" class="btn btn-danger btn-block" (click)="funcionEliminar()">Presione este Botón para ELIMINAR esta red</button>
+                <button type="button" class="btn btn-danger btn-block" (click)="funcionEliminar()">Presione este Botón para ELIMINAR esta habilidad</button>
             </div>
         </div>
       </form>
   </div>
+
+  <!--AQUÍ EDITO EL FORMULARIO de Habilidades BLANDAS-->
+<div class="container" [ngStyle]="{'display': estadoDisplayFormularioBlandas}">
+  <form class="was-validated" [formGroup]="editarFormularioHabilidadesBlandas" (ngSubmit)="envioDeFormularioHabilidadesBlandas(editarFormularioHabilidadesBlandas.value)">
+      <br>
+      <h2>Modifique los datos que desee sobre la habilidad seleccionada</h2>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Nombre de la habilidad</span>
+          <input type="text" class="form-control" placeholder="Ingrese el nombre de la habilidad" formControlName="subtituloBlandas" required>
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Porcentaje de avance</span>
+          <input type="text" class="form-control" placeholder="Complete el porcentaje de avance en esta habilidad" formControlName="porcentajeBlandas" required>          
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Tamaño de letra</span>
+          <input type="text" class="form-control" placeholder="Tamaño de letra, se expresa 10, 15 , 20, etc" formControlName="sizeSubTituloBlandas" required>          
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos modificados de la habilidad</button>
+      </div>
+      <br>
+      <div class="btn-group">
+          <div class="d-grid col-4">
+              <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
+          </div>
+          
+          <div class="d-grid col-4">
+              <button type="button" class="btn btn-success btn-block" (click)="funcionNuevaHabilidad()">Presione este Botón para AGREGAR una nueva habilidad</button>
+          </div>
+          
+          <div class="d-grid col-4">
+              <button type="button" class="btn btn-danger btn-block" (click)="funcionEliminar()">Presione este Botón para ELIMINAR esta habilidad</button>
+          </div>
+      </div>
+    </form>
+</div>
   

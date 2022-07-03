@@ -30,6 +30,7 @@ import { FormNuevoProyectoComponent } from './componentes/form-nuevo-proyecto/fo
 import { FormRedesComponent } from './componentes/form-redes/form-redes.component';
 import { FormNuevaRedComponent } from './componentes/form-nueva-red/form-nueva-red.component';
 import { FormHabilidadesComponent } from './componentes/form-habilidades/form-habilidades.component';
+import { FormNuevaHabilidadComponent } from './componentes/form-nueva-habilidad/form-nueva-habilidad.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { FormHabilidadesComponent } from './componentes/form-habilidades/form-ha
     FormNuevoProyectoComponent,
     FormRedesComponent,
     FormNuevaRedComponent,
-    FormHabilidadesComponent
+    FormHabilidadesComponent,
+    FormNuevaHabilidadComponent
   ],
   imports: [
     BrowserModule,

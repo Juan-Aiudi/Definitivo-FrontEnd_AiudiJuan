@@ -7,6 +7,7 @@ import { FormHabilidadesComponent } from './componentes/form-habilidades/form-ha
 import { FormHeaderyfooterComponent } from './componentes/form-headeryfooter/form-headeryfooter.component';
 import { FormNuevaEducacionComponent } from './componentes/form-nueva-educacion/form-nueva-educacion.component';
 import { FormNuevaExperienciaComponent } from './componentes/form-nueva-experiencia/form-nueva-experiencia.component';
+import { FormNuevaHabilidadComponent } from './componentes/form-nueva-habilidad/form-nueva-habilidad.component';
 import { FormNuevaRedComponent } from './componentes/form-nueva-red/form-nueva-red.component';
 import { FormNuevoAcDeComponent } from './componentes/form-nuevo-ac-de/form-nuevo-ac-de.component';
 import { FormNuevoProyectoComponent } from './componentes/form-nuevo-proyecto/form-nuevo-proyecto.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'formnuevoproyecto', component: FormNuevoProyectoComponent},
   {path:'formredes', component: FormRedesComponent},
   {path:'formnuevared', component: FormNuevaRedComponent},
-  {path:'formhabilidades', component: FormHabilidadesComponent}
+  {path:'formhabilidades', component: FormHabilidadesComponent},
+  {path:'formnuevahabilidad', component: FormNuevaHabilidadComponent}
 ];
 
 @NgModule({

@@ -25,11 +25,11 @@ public class HabilidadesDuras {
     private int porcentajeDuras;
     
     @NotNull
-    @Size(min = 1, max = 15, message = "no cumple con la longitud deseada entre 1 y 15 caracteres")
+    @Size(min = 1, max = 30, message = "no cumple con la longitud deseada entre 1 y 30 caracteres")
     private String subtituloDuras;
     
     @NotNull
-    @Size(min = 1, max = 15, message = "no cumple con la longitud deseada entre 1 y 15 caracteres")
+    @Size(min = 1, max = 30, message = "no cumple con la longitud deseada entre 1 y 30 caracteres")
     private String sizeSubTituloDuras;
     
     @JsonIgnore //Al generar el Json no genera esta parte para que no ocupe mucho lugar

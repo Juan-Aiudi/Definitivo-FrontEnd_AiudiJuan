@@ -1,9 +1,9 @@
 <div class="row">
     <h2>Hard & Soft Skills</h2>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4">
+    <div class="text-center col-sm-6 col-md-4 col-lg-4" *ngFor="let item_Duras of habilidadesD" (click)="funcionEditar()">
     <!-- You can now use it in app.component.html -->
         <circle-progress
-            [percent]="85"
+            [percent]="item_Duras.porcentajeDuras"
             [radius]="60"
             [outerStrokeWidth]="16"
             [innerStrokeWidth]="3"
@@ -14,53 +14,16 @@
             [subtitleColor]="'black'"
             [titleFontSize]="'15px'"
             [titleColor]="'#FF6347'"
-            [subtitle]="'HTML'"
-            [subtitleFontSize]="'15px'"
+            [subtitle]="item_Duras.subtituloDuras"
+            [subtitleFontSize]="item_Duras.sizeSubTituloDuras+'px'"
         ></circle-progress>
 
     </div>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4">
-        <!-- You can now use it in app.component.html -->
-            <circle-progress
-                [percent]="60"
-                [radius]="60"
-                [outerStrokeWidth]="16"
-                [innerStrokeWidth]="3"
-                [outerStrokeColor]="'#FF6347'"
-                [innerStrokeColor]="'#C7E596'"
-                [animation]="true"
-                [animationDuration]="1000"
-                [subtitleColor]="'black'"
-                [titleFontSize]="'15px'"
-                [titleColor]="'#FF6347'"
-                [subtitle]="'CSS'"
-                [subtitleFontSize]="'15px'"
-            ></circle-progress>
     
-    </div>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4">
-        <!-- You can now use it in app.component.html -->
-            <circle-progress
-                [percent]="50"
-                [radius]="60"
-                [outerStrokeWidth]="16"
-                [innerStrokeWidth]="3"
-                [outerStrokeColor]="'#FF6347'"
-                [innerStrokeColor]="'#C7E596'"
-                [animation]="true"
-                [animationDuration]="1000"
-                [subtitleColor]="'black'"
-                [titleFontSize]="'15px'"
-                [titleColor]="'#FF6347'"
-                [subtitle]="'JS'"
-                [subtitleFontSize]="'15px'"
-            ></circle-progress>
-    
-    </div>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4">
+    <div class="text-center col-sm-6 col-md-4 col-lg-4" *ngFor="let item_Blandas of habilidadesB" (click)="funcionEditar()">
             <!-- You can now use it in app.component.html -->
                 <circle-progress
-                    [percent]="45"
+                    [percent]="item_Blandas.porcentajeBlandas"
                     [radius]="60"
                     [outerStrokeWidth]="16"
                     [innerStrokeWidth]="3"
@@ -71,46 +34,8 @@
                     [subtitleColor]="'black'"
                     [titleFontSize]="'15px'"
                     [titleColor]="'#FF6347'"
-                    [subtitle]="'TS'"
-                    [subtitleFontSize]="'15px'"
-                ></circle-progress>
-        
-    </div>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4">
-            <!-- You can now use it in app.component.html -->
-                <circle-progress
-                    [percent]="90"
-                    [radius]="60"
-                    [outerStrokeWidth]="16"
-                    [innerStrokeWidth]="3"
-                    [outerStrokeColor]="'#FF6347'"
-                    [innerStrokeColor]="'#C7E596'"
-                    [animation]="true"
-                    [animationDuration]="1000"
-                    [subtitleColor]="'black'"
-                    [titleFontSize]="'15px'"
-                    [titleColor]="'#FF6347'"
-                    [subtitle]="'GitHub'"
-                    [subtitleFontSize]="'15px'"
-                ></circle-progress>
-        
-    </div>
-    <div class="text-center col-sm-6 col-md-4 col-lg-4" (click)="funcionEditar(1)">
-            <!-- You can now use it in app.component.html -->
-                <circle-progress
-                    [percent]="100"
-                    [radius]="60"
-                    [outerStrokeWidth]="16"
-                    [innerStrokeWidth]="3"
-                    [outerStrokeColor]="'#FF6347'"
-                    [innerStrokeColor]="'#C7E596'"
-                    [animation]="true"
-                    [animationDuration]="1000"
-                    [subtitleColor]="'black'"
-                    [titleFontSize]="'15px'"
-                    [titleColor]="'#FF6347'"
-                    [subtitle]="'COMUNICACIÓN'"
-                    [subtitleFontSize]="'10px'"
+                    [subtitle]="item_Blandas.subtituloBlandas"
+                    [subtitleFontSize]="item_Blandas.sizeSubTituloBlandas+'px'"
                 ></circle-progress>
                 <!-- ESTO SON LOS VALORES QUE CAMBIAN
                     [percent]="100"
@@ -119,18 +44,12 @@
                 -->
         
     </div>
-    
-    <div class="d-grid">
-        <br>
-        <br>
-        <div class="btn-group">
-            <button type="submit" class="btn btn-success btn-block">Presione este Botón para EDITAR las habilidades duras</button>
-            
-            <button type="submit" class="btn btn-success btn-block">Presione este Botón para EDITAR las habilidades blandas</button>
-        </div>
-    </div>
+        
 </div>
 
 <!--
     Las habilidades duras representan aquellas cosas que has aprendido a hacer o a usar, como las herramientas, tecnologías u otras competencias. Las habilidades blandas son los rasgos interpersonales que has desarrollado con el tiempo, como las comunicaciones efectivas, la credibilidad que generes o la generosidad.
+
 -->
+
+

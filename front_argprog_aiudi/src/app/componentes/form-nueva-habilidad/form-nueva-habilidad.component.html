@@ -1,0 +1,75 @@
+<!--Primeros dos botones para elegir el tipo de habilidad a editar-->
+<div class="container" [ngStyle]="{'display': estadoDisplayBotonEleccion}">
+    <div class="d-grid">
+        <br>
+        <br>
+        <div class="btn-group">
+            <button type="text" class="btn btn-success btn-block eleccion" (click)="eleccion(true)" >Presione este Botón para AGREGAR una habilidad dura</button>
+            
+            <button type="text" class="btn btn-success btn-block eleccion" (click)="eleccion(false)" >Presione este Botón para AGREGAR una habilidad blanda</button>
+        </div>
+    </div>    
+</div>
+
+<!--AQUÍ EDITO EL FORMULARIO de Habilidades DURAS-->
+<div class="container" [ngStyle]="{'display': estadoDisplayFormularioDuras}">
+    <form class="was-validated" [formGroup]="editarFormularioHabilidadesDuras" (ngSubmit)="envioDeFormularioHabilidadesDuras(editarFormularioHabilidadesDuras.value)">
+        <br>
+        <h2>Ingrese los datos para esta nueva habilidad dura</h2>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Nombre de la habilidad</span>
+            <input type="text" class="form-control" placeholder="Ingrese el nombre de la habilidad" formControlName="subtituloDuras" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Porcentaje de avance</span>
+            <input type="text" class="form-control" placeholder="Complete el porcentaje de avance en esta habilidad" formControlName="porcentajeDuras" required>          
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-text">Tamaño de letra</span>
+            <input type="text" class="form-control" placeholder="Tamaño de letra, se expresa 10, 15 , 20, etc" formControlName="sizeSubTituloDuras" required>          
+        </div>
+        <br>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos de la NUEVA habilidad</button>
+        </div>
+        <br>
+        <div class="d-grid">
+            <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
+        </div>
+      </form>
+  </div>
+
+  <!--AQUÍ EDITO EL FORMULARIO de Habilidades BLANDAS-->
+<div class="container" [ngStyle]="{'display': estadoDisplayFormularioBlandas}">
+  <form class="was-validated" [formGroup]="editarFormularioHabilidadesBlandas" (ngSubmit)="envioDeFormularioHabilidadesBlandas(editarFormularioHabilidadesBlandas.value)">
+      <br>
+      <h2>Ingrese los datos para esta nueva habilidad blanda</h2>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Nombre de la habilidad</span>
+          <input type="text" class="form-control" placeholder="Ingrese el nombre de la habilidad" formControlName="subtituloBlandas" required>
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Porcentaje de avance</span>
+          <input type="text" class="form-control" placeholder="Complete el porcentaje de avance en esta habilidad" formControlName="porcentajeBlandas" required>          
+      </div>
+      <br>
+      <div class="input-group">
+          <span class="input-group-text">Tamaño de letra</span>
+          <input type="text" class="form-control" placeholder="Tamaño de letra, se expresa 10, 15 , 20, etc" formControlName="sizeSubTituloBlandas" required>          
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-block">Presione este Botón para guardar los datos de la NUEVA habilidad</button>
+      </div>
+      <br>
+      <div class="d-grid">
+          <button type="button" class="btn btn-secondary btn-block" (click)="funcionVolverHome()">VOLVER. Presione este Botón para cancelar el envío o volver a la página principal</button>
+      </div>                    
+      
+    </form>
+</div>

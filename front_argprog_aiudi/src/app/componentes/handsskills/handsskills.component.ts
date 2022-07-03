@@ -10,14 +10,17 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
 })
 export class HandsskillsComponent implements OnInit {
 
+  habilidadesD: any;
+  habilidadesB: any;
+
   constructor(private habilidadesService: HabilidadesService, private router: Router) { }
 
   ngOnInit(): void {
+    this.habilidadesService.getHabilidadesDuras().subscribe(dataDuras => {this.habilidadesD = dataDuras});
+    this.habilidadesService.getHabilidadesBlandas().subscribe(dataBlandas => {this.habilidadesB = dataBlandas});
   }
 
-  funcionEditar(id: any){
-    console.log('Imprimo la ID desde el componente TS de proyectos: ');
-    console.log(id);
+  funcionEditar(){
     this.router.navigate(['formhabilidades']);
   }
 

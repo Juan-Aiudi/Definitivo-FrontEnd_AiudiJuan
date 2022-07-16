@@ -5,6 +5,8 @@ import com.portfolio.jca.interfaz.IPersonaAcercaDeServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController //Indicamos que es un controlador
-//@CrossOrigin(origins = "http://localhost:4200")  //Le digo que acepte que sea llamado de la URL 4200
+@CrossOrigin(origins = "http://localhost:4200")  //Le digo que acepte que sea llamado de la URL 4200
 public class PersonaAcDeController {
     @Autowired IPersonaAcercaDeServicio iadservicio;
     
+
     //Con este get traigo de la DB al front
     @GetMapping("/ad/lista")
     public List<PersonaAcercaDe> getAcDe(){
@@ -27,6 +30,8 @@ public class PersonaAcDeController {
         return iadservicio.getPersonaAcercaDe();
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el post guardo desde el front en la DB
     @PostMapping("/ad/crear")
     //Con el RequestBody le envío los datos al back desde el body
@@ -36,7 +41,9 @@ public class PersonaAcDeController {
         return "Se creo correctamente la persona";
     }
     
-    //Con el delete elimino desde el front a la DB por su ID como variable
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
+    //Con el delete elimino desde el front a la DB por su ID como variable    
     @DeleteMapping("/ad/borrar/{id}")
     //Con el PathVariable le envío la variable ID a eliminar
     public String deleteAcDe(@PathVariable Long id){
@@ -45,7 +52,8 @@ public class PersonaAcDeController {
         return "Se eliminó correctamente la persona";
     }
     
-    //Si quiero modificar utilizo PutMapping por la variable ID 
+    
+    //Si quiero modificar utilizo PutMapping por la variable ID    
     @PutMapping("/ad/modificar/{id}")//Quedaría asi: URL:PUERTO/ad/modificar/id?param&param&param&param&param    
     public PersonaAcercaDe modificarAcDe(@PathVariable Long id,
                                          @RequestParam("nombreAcercaDe") String nvoNombre,
@@ -65,6 +73,7 @@ public class PersonaAcDeController {
         
         return acde;
     }
+    
     
     @GetMapping("/ad/traer/persona/{id}")
     public PersonaAcercaDe finAcercaDe(@PathVariable Long id){

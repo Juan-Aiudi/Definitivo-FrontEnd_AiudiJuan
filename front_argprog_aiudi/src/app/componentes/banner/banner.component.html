@@ -1,6 +1,6 @@
 <div class="text-center">
     <div class="contenedorboton">
-        <button type="button" class="btn btn-success" (click)="funcionEditar(headerfooter.idHeaderFooter)" title="Presione este botón para editar la sección"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editar"></button>
+        <button type="button" class="btn btn-success" (click)="funcionEditar(headerfooter.idHeaderFooter)" title="Presione este botón para editar la sección" *ngIf="registrado"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editar" *ngIf="registrado"></button>
     </div>
     <img src="{{headerfooter.imagenBanner}}">
 </div>

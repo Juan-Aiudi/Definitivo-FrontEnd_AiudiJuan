@@ -7,7 +7,7 @@
             <div class="boton">
                 <!--<button type="button" class="btn btn-danger"><img src="../../../assets/SimboloBorrar.png" alt="" class="simbolo" id="eliminar"></button> -->
 
-                <button type="button" class="btn btn-success" (click)="funcionEditar(item.idEducacion)" title="Presione este botón para editar la sección"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editar"></button>
+                <button type="button" class="btn btn-success" (click)="funcionEditar(item.idEducacion)" title="Presione este botón para editar la sección" *ngIf="registrado"><img src="../../../assets/SimboloEditar.png" alt="" class="simbolo" id="editar" *ngIf="registrado"></button>
             </div>
         </div>
     

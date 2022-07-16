@@ -11,7 +11,7 @@
                     <a href="{{item.linkRed}}" target="_blank"><img src="{{item.imagenRed}}" id="facebook" title="acceso directo a mi página de {{item.nombreRed}}"></a>                    
                 </div>
             
-            <button type="button" class="btn btn-primary" title="Presione este botón para editar las redes" (click)="funcionRedes()">Redes</button>
+            <button type="button" class="btn btn-primary" title="Presione este botón para editar las redes" (click)="funcionRedes()" *ngIf="registrado">Redes</button>
             
             <button type="button" class="btn btn-success" title="Presione este botón para inhabilitarse" (click)="funcionLogin()">Exit</button>
             </div>

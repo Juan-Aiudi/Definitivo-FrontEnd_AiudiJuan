@@ -4,6 +4,8 @@ import com.portfolio.jca.entidad.Proyectos;
 import com.portfolio.jca.interfaz.IProyectosServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,8 @@ public class ProyectosController {
         return iproyectosservicio.getProyectos();
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el post guardo desde el front en la DB
     @PostMapping("/proyectos/crear")
     //Con el RequestBody le envío los datos al back desde el body
@@ -35,6 +39,8 @@ public class ProyectosController {
         return "Se creo correctamente el proyecto";
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el delete elimino desde el front a la DB por su ID como variable
     @DeleteMapping("/proyectos/borrar/{id}")
     //Con el PathVariable le envío la variable ID a eliminar
@@ -43,6 +49,7 @@ public class ProyectosController {
         iproyectosservicio.deleteProyectos(id);
         return "Se eliminó correctamente el proyecto";
     }
+    
     
     //Si quiero modificar utilizo PutMapping por la variable ID 
     @PutMapping("/proyectos/modificar/{id}")//Quedaría asi: URL:PUERTO/proyectos/modificar/id/param&param&param

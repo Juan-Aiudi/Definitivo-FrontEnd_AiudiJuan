@@ -4,6 +4,8 @@ import com.portfolio.jca.entidad.ExperienciaLaboral;
 import com.portfolio.jca.interfaz.IExperienciaLabServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,8 @@ public class ExperienciaController {
         return iexperienciaservicio.getExperiencia();
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el post guardo desde el front en la DB
     @PostMapping("/experiencia/crear")
     //Con el RequestBody le envío los datos al back desde el body
@@ -35,6 +39,8 @@ public class ExperienciaController {
         return "Se creo correctamente la experiencia";
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el delete elimino desde el front a la DB por su ID como variable
     @DeleteMapping("/experiencia/borrar/{id}")
     //Con el PathVariable le envío la variable ID a eliminar
@@ -43,6 +49,7 @@ public class ExperienciaController {
         iexperienciaservicio.deleteExperiencia(id);
         return "Se eliminó correctamente la experiencia";
     }
+    
     
     //Si quiero modificar utilizo PutMapping por la variable ID 
     @PutMapping("/experiencia/modificar/{id}")//Quedaría asi: URL:PUERTO/experiencia/modificar/id/param&param&param&param

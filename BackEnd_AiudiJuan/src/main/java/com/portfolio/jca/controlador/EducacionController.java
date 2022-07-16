@@ -4,6 +4,8 @@ import com.portfolio.jca.entidad.Educacion;
 import com.portfolio.jca.interfaz.IEducacionServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,8 @@ public class EducacionController {
         return ieducacionservicio.getEducacion();
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el post guardo desde el front en la DB
     @PostMapping("/educacion/crear")
     //Con el RequestBody le envío los datos al back desde el body
@@ -35,6 +39,8 @@ public class EducacionController {
         return "Se creo correctamente la educación";
     }
     
+    //Con el PostAuthorize autorizo que un determinado usuario pueda ejecutar esta acción
+    @PostAuthorize("hasRole('ADMIN')")
     //Con el delete elimino desde el front a la DB por su ID como variable
     @DeleteMapping("/educacion/borrar/{id}")
     //Con el PathVariable le envío la variable ID a eliminar

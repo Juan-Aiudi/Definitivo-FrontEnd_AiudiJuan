@@ -2,15 +2,17 @@
     <img src="../../../assets/logoJCA.png" class="avatar" alt="Avatar Image">
     
     <h1>Inicie sesión aquí</h1>
-    <form>
+    <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
         <!-- USERNAME INPUT -->
-        <label for="username">Nombre de usuario</label>
-        <input type="text" placeholder="Ingrece nombre de usuario">
+        <label for="nombreUsuario">Nombre de usuario</label>
+        <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Ingrece nombre de usuario" [(ngModel)]="nombreUsuario" required>
         <!-- PASSWORD INPUT -->
         <label for="password">Contraseña</label>
-        <input type="password" placeholder="Ingrece contraseña">
-        <input type="submit" value="Iniciar sesión" (click)="funcionVolverHome()">
-        <!--<a href="#">Perdió su contraseña?</a><br>
+        <input type="password" id="password" name="password" placeholder="Ingrece contraseña" [(ngModel)]="password" required >
+        <input type="submit" value="Iniciar sesión">
+        <!--
+            <input type="submit" value="Iniciar sesión" (click)="funcionVolverHome()">
+            <a href="#">Perdió su contraseña?</a><br>
         <a href="#">No tienes una cuenta?</a> -->
     </form>
 </div>

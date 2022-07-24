@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController //Indicamos que es un controlador
-@CrossOrigin(origins = "http://localhost:4200")//Le digo que acepte que sea llamado de la URL 4200
+//@CrossOrigin(origins = "http://localhost:4200")//Le digo que acepte que sea llamado de la URL 4200
+@CrossOrigin(origins = "https://proyectoargprogramaaiudijuan.web.app")
 public class ExperienciaController {
     @Autowired IExperienciaLabServicio iexperienciaservicio;
     

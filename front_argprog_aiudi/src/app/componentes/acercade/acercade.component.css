@@ -45,6 +45,7 @@ img{
 }
 
 button{
+    background: rgb(226, 190, 190);
     margin-left: 10px;
     align-items: center;
     height: 10px;

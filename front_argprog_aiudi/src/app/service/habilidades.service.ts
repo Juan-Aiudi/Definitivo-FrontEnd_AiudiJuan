@@ -10,8 +10,11 @@ import { habilidadesDurasModel } from '../model/habilidadesDuras.model';
 })
 export class HabilidadesService {
 
-  URL_Duras = 'http://localhost:8080/habduras/';
-  URL_Blandas = 'http://localhost:8080/habblandas/';
+  //URL_Duras = 'http://localhost:8080/habduras/';
+  //URL_Blandas = 'http://localhost:8080/habblandas/';
+
+  URL_Duras = 'https://arg-programa-aiudi-juan.herokuapp.com/habduras/'
+  URL_Blandas = 'https://arg-programa-aiudi-juan.herokuapp.com/habblandas/'
 
   constructor(private http: HttpClient) { }
 

@@ -8,7 +8,8 @@ import { personaAcDe } from '../model/personaAcDe.model';
 })
 export class PersonaAcDeService {
 
-  URL = 'http://localhost:8080/ad/';
+  //URL = 'http://localhost:8080/ad/';
+  URL = 'https://arg-programa-aiudi-juan.herokuapp.com/ad/'
   
   constructor(private http: HttpClient) { }
 

@@ -8,7 +8,8 @@ import { experienciaLabModel } from '../model/experienciaLab.model';
 })
 export class ExperiencialabService {
 
-  URL = 'http://localhost:8080/experiencia/';
+  //URL = 'http://localhost:8080/experiencia/';
+  URL = 'https://arg-programa-aiudi-juan.herokuapp.com/experiencia/'
 
   constructor(private http: HttpClient) { }
 

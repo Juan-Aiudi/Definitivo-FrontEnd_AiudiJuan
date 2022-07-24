@@ -56,6 +56,7 @@ p::first-letter{   /* Aquí aplico un pseudo-elemento donde a la Primera letra l
 }
 
 button{
+    background: rgb(226, 190, 190);
     margin-left: 10px;
     align-items: center;
     height: 10px;

@@ -9,8 +9,11 @@ import { redesModel } from '../model/redes.model';
 })
 export class HeaderyfooterService {
 
-  URL = 'http://localhost:8080/hyf/';
-  URL_Redes = 'http://localhost:8080/redes/';
+  //URL = 'http://localhost:8080/hyf/';
+  //URL_Redes = 'http://localhost:8080/redes/';
+
+  URL = 'https://arg-programa-aiudi-juan.herokuapp.com/hyf/'
+  URL_Redes = 'https://arg-programa-aiudi-juan.herokuapp.com/redes/'
 
   constructor(private http: HttpClient) { }
 

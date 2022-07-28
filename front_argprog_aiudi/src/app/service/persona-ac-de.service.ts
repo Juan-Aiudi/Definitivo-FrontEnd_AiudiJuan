@@ -9,7 +9,7 @@ import { personaAcDe } from '../model/personaAcDe.model';
 export class PersonaAcDeService {
 
   //URL = 'http://localhost:8080/ad/';
-  URL = 'https://arg-programa-aiudi-juan.herokuapp.com/ad/'
+  URL = 'https://app-arg-prog-aiudi-juan-back.herokuapp.com/ad/'
   
   constructor(private http: HttpClient) { }
 

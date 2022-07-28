@@ -9,7 +9,7 @@ import { proyectoModel } from '../model/proyecto.model';
 export class ProyectoService {
 
   //URL = 'http://localhost:8080/proyectos/';
-  URL = 'https://arg-programa-aiudi-juan.herokuapp.com/proyectos/'
+  URL = 'https://app-arg-prog-aiudi-juan-back.herokuapp.com/proyectos/'
 
   constructor(private http: HttpClient) { }
 

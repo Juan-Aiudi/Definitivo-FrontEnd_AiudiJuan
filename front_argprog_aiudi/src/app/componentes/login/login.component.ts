@@ -56,6 +56,10 @@ export class LoginComponent implements OnInit {
     
   }
 
+  nuevoUsuario(){
+    this.router.navigate(['/formnuevousuario']);
+  }
+
   onLogin(): void{
     this.estadoSpinner = 'block';
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);

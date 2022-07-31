@@ -11,6 +11,7 @@ import { FormNuevaHabilidadComponent } from './componentes/form-nueva-habilidad/
 import { FormNuevaRedComponent } from './componentes/form-nueva-red/form-nueva-red.component';
 import { FormNuevoAcDeComponent } from './componentes/form-nuevo-ac-de/form-nuevo-ac-de.component';
 import { FormNuevoProyectoComponent } from './componentes/form-nuevo-proyecto/form-nuevo-proyecto.component';
+import { FormNuevoUsuarioComponent } from './componentes/form-nuevo-usuario/form-nuevo-usuario.component';
 import { FormProyectosComponent } from './componentes/form-proyectos/form-proyectos.component';
 import { FormRedesComponent } from './componentes/form-redes/form-redes.component';
 import { HomeComponent } from './componentes/home/home.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:'formredes', component: FormRedesComponent},
   {path:'formnuevared', component: FormNuevaRedComponent},
   {path:'formhabilidades', component: FormHabilidadesComponent},
-  {path:'formnuevahabilidad', component: FormNuevaHabilidadComponent}
+  {path:'formnuevahabilidad', component: FormNuevaHabilidadComponent},
+  {path:'formnuevousuario', component: FormNuevoUsuarioComponent}
 ];
 
 @NgModule({

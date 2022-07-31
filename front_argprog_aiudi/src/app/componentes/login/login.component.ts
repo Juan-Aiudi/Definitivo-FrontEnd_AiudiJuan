@@ -20,6 +20,11 @@ export class LoginComponent implements OnInit {
   password!: string;
   roles: string[] = [];
   errMsj!: string;
+  estadoSpinner?:string;
+  estadoMostrarhide1?:string;
+  estadoMostrarhide2?:string;
+  controlhide = false;
+  tipo?: any;
 
   constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, public alertas: AlertasService) { }
 
@@ -29,13 +34,30 @@ export class LoginComponent implements OnInit {
       this.isLogginFail = false;
       this.roles = this.tokenService.getAuthorities();
     }
+    this.estadoSpinner = 'none';
+    this.estadoMostrarhide1 = 'none';
+    this.estadoMostrarhide2 = 'block';
+    this.tipo = 'password'; //Por fin logré hacer q se muestre la password. En HTML tenía q ir [type]
   }
 
-  funcionVolverHome(){
-    this.router.navigate(['/home']);
+  
+  miFuncion(){    
+    if(this.controlhide == false){
+      this.estadoMostrarhide1 = 'block';
+      this.estadoMostrarhide2 = 'none';
+      this.tipo = 'text';
+      this.controlhide = true;
+    }else{
+      this.estadoMostrarhide1 = 'none';
+      this.estadoMostrarhide2 = 'block';
+      this.tipo = 'password';
+      this.controlhide = false;
+    }
+    
   }
 
   onLogin(): void{
+    this.estadoSpinner = 'block';
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(
       data => {
@@ -49,6 +71,7 @@ export class LoginComponent implements OnInit {
         console.log(data.authorities);
         this.router.navigate(['/home']);
       }, err =>{
+        this.estadoSpinner = 'none';
         this.isLogged = false;
         this.isLogginFail = true;
         this.errMsj = err.error.mensaje;
